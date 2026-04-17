@@ -5,7 +5,7 @@ import friendsData from "../../../public/data.json";
 import Link from "next/link";
 
 const Home = () => {
-  // 🔥 Dynamic Stats
+  // stats
   const totalFriends = friendsData.length;
   const onTrack = friendsData.filter((f) => f.status === "ok").length;
   const needAttention = friendsData.filter(
@@ -17,43 +17,41 @@ const Home = () => {
 
       {/* HEADER */}
       <div className="text-center space-y-4 max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold">
-          Friends to keep close in your life
+        
+        <h1 className="text-4xl font-extrabold bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
+          Keep Your Connections Alive
         </h1>
 
         <p className="text-gray-500">
-          Your personal shelf of meaningful connections. Browse, tend, and
-          nurture the relationships that matter most.
+          Track, nurture, and strengthen the relationships that truly matter in your life.
         </p>
 
-        <button className="btn btn-accent btn-sm">
+        <button className="btn bg-gradient-to-r from-green-600 to-blue-500 text-white border-none hover:scale-105 transition">
           + Add a Friend
         </button>
       </div>
 
       {/* STATS */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-5xl mx-auto">
-        
-        <div className="card bg-base-100 shadow p-4 text-center">
-          <h2 className="font-bold text-lg">{totalFriends}</h2>
-          <p className="text-sm text-gray-500">Total Friends</p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-5xl mx-auto">
+
+        <div className="bg-white p-5 rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition text-center">
+          <h2 className="text-3xl font-bold text-green-600">{totalFriends}</h2>
+          <p className="text-gray-500 text-sm">Total Friends</p>
         </div>
 
-        <div className="card bg-base-100 shadow p-4 text-center">
-          <h2 className="font-bold text-lg">{onTrack}</h2>
-          <p className="text-sm text-gray-500">On Track</p>
+        <div className="bg-white p-5 rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition text-center">
+          <h2 className="text-3xl font-bold text-green-500">{onTrack}</h2>
+          <p className="text-gray-500 text-sm">On Track</p>
         </div>
 
-        <div className="card bg-base-100 shadow p-4 text-center">
-          <h2 className="font-bold text-lg">{needAttention}</h2>
-          <p className="text-sm text-gray-500">Need Attention</p>
+        <div className="bg-white p-5 rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition text-center">
+          <h2 className="text-3xl font-bold text-orange-500">{needAttention}</h2>
+          <p className="text-gray-500 text-sm">Need Attention</p>
         </div>
 
-        <div className="card bg-base-100 shadow p-4 text-center">
-          <h2 className="font-bold text-lg">12</h2>
-          <p className="text-sm text-gray-500">
-            Interactions This Month
-          </p>
+        <div className="bg-white p-5 rounded-2xl shadow hover:shadow-xl hover:-translate-y-1 transition text-center">
+          <h2 className="text-3xl font-bold text-blue-500">12</h2>
+          <p className="text-gray-500 text-sm">Interactions</p>
         </div>
 
       </div>
@@ -71,7 +69,7 @@ const Home = () => {
         {friendsData.map((data) => (
           <Link key={data.id} href={`/home/${data.id}`}>
             
-            <div className="card bg-base-100 shadow-md p-5 items-center text-center rounded-2xl hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
+            <div className="card bg-white shadow-md p-5 items-center text-center rounded-2xl hover:shadow-xl hover:-translate-y-1 transition cursor-pointer">
 
               {/* IMAGE */}
               <img

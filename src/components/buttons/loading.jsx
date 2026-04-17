@@ -2,7 +2,7 @@
 
 const Loading = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="h-screen flex flex-col items-center justify-center bg-linear-to-br from-green-50 via-white to-blue-50">
 
       {/* Animated circle */}
       <div className="relative flex items-center justify-center mb-6">
