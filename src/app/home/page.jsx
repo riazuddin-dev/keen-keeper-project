@@ -18,7 +18,7 @@ const Home = () => {
       {/* HEADER */}
       <div className="text-center space-y-4 max-w-2xl mx-auto">
         
-        <h1 className="text-4xl font-extrabold bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-extrabold bg-linear-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
           Keep Your Connections Alive
         </h1>
 
