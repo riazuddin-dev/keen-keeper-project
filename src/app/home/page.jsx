@@ -26,7 +26,7 @@ const Home = () => {
           Track, nurture, and strengthen the relationships that truly matter in your life.
         </p>
 
-        <button className="btn bg-gradient-to-r from-green-600 to-blue-500 text-white border-none hover:scale-105 transition">
+        <button className="btn bg-linear-to-r from-green-600 to-blue-500 text-white border-none hover:scale-105 transition">
           + Add a Friend
         </button>
       </div>
