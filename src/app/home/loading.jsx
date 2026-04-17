@@ -1,19 +1,32 @@
 "use client";
 
-const loading = () => {
+const Loading = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-100 to-blue-100">
+    <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-50 via-white to-blue-50">
 
-      {/* SPINNER */}
-      <span className="loading loading-ring loading-lg text-green-700 mb-6"></span>
+      {/* Animated circle */}
+      <div className="relative flex items-center justify-center mb-6">
+        
+        <span className="animate-ping absolute inline-flex h-16 w-16 rounded-full bg-green-400 opacity-20"></span>
+        
+        <span className="relative inline-flex h-16 w-16 rounded-full bg-green-600"></span>
+      
+      </div>
 
-      {/* TEXT */}
-      <h2 className="text-xl font-semibold text-gray-700 animate-pulse">
+      {/* Text */}
+      <h2 className="text-xl font-semibold text-gray-700 tracking-wide">
         Loading your connections...
       </h2>
 
-      {/* SUB TEXT */}
-      <p className="text-gray-500 text-sm mt-2">
+      {/* Dots animation */}
+      <div className="flex gap-1 mt-3">
+        <span className="w-2 h-2 bg-green-600 rounded-full animate-bounce"></span>
+        <span className="w-2 h-2 bg-green-600 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+        <span className="w-2 h-2 bg-green-600 rounded-full animate-bounce [animation-delay:0.4s]"></span>
+      </div>
+
+      {/* Sub text */}
+      <p className="text-gray-400 text-sm mt-4">
         Please wait a moment
       </p>
 
@@ -21,4 +34,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;

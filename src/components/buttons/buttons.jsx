@@ -18,7 +18,7 @@ const Buttons = ({ datas }) => {
     setSelectedData((prev) => {
       const updated = [newItem, ...prev];
 
-   
+      // 🔥 immediate save (important)
       localStorage.setItem("timeline", JSON.stringify(updated));
 
       return updated;
