@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌿 KeenKeeper
 
-## Getting Started
+## 📌 Project Description
 
-First, run the development server:
+KeenKeeper is a simple and intuitive relationship management app that helps users track and maintain meaningful connections. Users can log interactions like calls, texts, and video chats, view their interaction history, and analyze their communication patterns through visual insights.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Next.js (App Router)
+* React.js
+* Tailwind CSS
+* DaisyUI
+* Recharts
+* React Hot Toast
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 1. 📜 Interaction Timeline
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Users can log calls, texts, and video chats. Each interaction is stored and displayed in a clean timeline view with date, icon, and title.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. 📊 Friendship Analytics
 
-## Deploy on Vercel
+A visual pie chart shows the number of interactions (Call / Text / Video), helping users understand their communication habits.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. 🔍 Smart Filtering
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Users can filter timeline entries by interaction type (Call, Text, Video) for quick and easy navigation.
+
+---
+
+## ⚙️ Additional Features
+
+* Custom 404 and Error Pages
+* Loading animations for better UX
+* Toast notifications on actions
+* Persistent data using localStorage
+
+---
+
+## 📷 UI Highlights
+
+* Clean and responsive design
+* Modern card-based layout
+* Smooth user experience
+
+---
+
+## 📌 Live Demo
+
+(Add your deployed link here)
+
+---
+
+## 📌 Author
+
+Your Name
+ Md Riaz Uddin

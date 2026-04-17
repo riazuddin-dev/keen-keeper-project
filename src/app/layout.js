@@ -1,5 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
+// import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import Navbar from "@/components/navbar/page";
+import Footer from "@/components/navbar/footer/page";
+import ContextProvaider, { FriendsProvidaer } from "@/components/context/ContextProvaider";
+import { Toaster } from "react-hot-toast";
+
+// import Context from "@/components/navbar/contexts/context";
+// import Contexts from "@/components/contexts/Contexts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +27,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
+      data-theme="light"
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+      >
+      <body className="min-h-full flex flex-col">
+           <Navbar></Navbar>
+        
+       <ContextProvaider>
+        
+          {children}
+       </ContextProvaider>
+       <Footer></Footer>
+      </body>
     </html>
   );
 }
