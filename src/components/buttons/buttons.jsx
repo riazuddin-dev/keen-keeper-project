@@ -3,7 +3,6 @@
 import { useContext } from "react";
 import { FriendsContext } from "@/components/context/ContextProvaider";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 const Buttons = ({ datas }) => {
   const { setSelectedData } = useContext(FriendsContext);
@@ -16,31 +15,23 @@ const Buttons = ({ datas }) => {
       date: new Date().toLocaleDateString(),
     };
 
-    const prev = JSON.parse(localStorage.getItem("timeline") || "[]");
-    const updated = [newItem, ...prev];
+    setSelectedData((prev) => {
+      const updated = [newItem, ...prev];
 
-    localStorage.setItem("timeline", JSON.stringify(updated));
-    setSelectedData(updated);
+   
+      localStorage.setItem("timeline", JSON.stringify(updated));
 
-    toast.success(`${type} added`);
+      return updated;
+    });
 
-    // 🔥 MOBILE FIX
-    window.location.href = "/timeline"; 
+    router.push("/timeline");
   };
 
   return (
     <div className="flex gap-4">
-      <button onClick={() => handleClick("Call")} className="btn btn-outline">
-        📞 Call
-      </button>
-
-      <button onClick={() => handleClick("Text")} className="btn btn-outline">
-        💬 Text
-      </button>
-
-      <button onClick={() => handleClick("Video")} className="btn btn-outline">
-        🎥 Video
-      </button>
+      <button onClick={() => handleClick("Call")} className="btn btn-outline">📞 Call</button>
+      <button onClick={() => handleClick("Text")} className="btn btn-outline">💬 Text</button>
+      <button onClick={() => handleClick("Video")} className="btn btn-outline">🎥 Video</button>
     </div>
   );
 };
