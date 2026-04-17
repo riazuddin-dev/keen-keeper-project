@@ -1,41 +1,57 @@
-
-
 "use client";
 
 import { FriendsContext } from "@/components/context/ContextProvaider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const Timeline = () => {
   const { selectedData } = useContext(FriendsContext);
 
-if (selectedData.length === 0) {
-  return (
-    <div className="h-[70vh] flex flex-col items-center justify-center text-center">
-      
-      {/* ICON */}
-      <div className="text-5xl mb-4">📭</div>
+  // 🔥 FILTER STATE
+  const [filter, setFilter] = useState("All");
 
-      {/* TITLE */}
-      <h2 className="text-xl font-semibold mb-2">
-        No interactions yet
-      </h2>
+  // 🔥 FILTER LOGIC
+  const filteredData =
+    filter === "All"
+      ? selectedData
+      : selectedData.filter((item) => item.action === filter);
 
-      {/* TEXT */}
-      <p className="text-gray-500 mb-4">
-        Start by calling, texting, or video chatting with a friend.
-      </p>
+  if (selectedData.length === 0) {
+    return (
+      <div className="h-[70vh] flex flex-col items-center justify-center text-center">
+        <div className="text-5xl mb-4">📭</div>
 
-    </div>
-  );
-}
+        <h2 className="text-xl font-semibold mb-2">
+          No interactions yet
+        </h2>
+
+        <p className="text-gray-500 mb-4">
+          Start by calling, texting, or video chatting with a friend.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 bg-base-200 min-h-screen">
       
       <h1 className="text-3xl font-bold mb-6">Timeline</h1>
 
+      {/* 🔥 FILTER UI */}
+      <div className="mb-6">
+        <select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          className="select select-bordered w-52"
+        >
+          <option value="All">All</option>
+          <option value="Call">Call</option>
+          <option value="Text">Text</option>
+          <option value="Video">Video</option>
+        </select>
+      </div>
+
       <div className="space-y-4">
-        {selectedData.map((item, index) => (
+        {filteredData.map((item, index) => (
           
           <div
             key={index}
