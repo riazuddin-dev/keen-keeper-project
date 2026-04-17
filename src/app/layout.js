@@ -38,6 +38,7 @@ export default function RootLayout({ children }) {
         
           {children}
        </ContextProvaider>
+       <Toaster position="top-right" />
        <Footer></Footer>
       </body>
     </html>
